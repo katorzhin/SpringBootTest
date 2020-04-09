@@ -1,10 +1,16 @@
 requirejs.config({
     baseUrl: 'js'
-})
+});
 
-require(['views/main'],function (main) {
+require(['views/main', 'views/cars'], function (main, cars) {
     webix.ready(function () {
-        webix.ui();
+        webix.ui({
+            id: 'root',
+            container: "app",
+            rows: [
+                main
+            ]
+        });
 
-    });
+    })
 });

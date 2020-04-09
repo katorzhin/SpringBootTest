@@ -1,11 +1,17 @@
-define(function () {
+define(['views/cars'], function (cars) {
     return {
 
         type: "line",
-        container: "app",
-        id: "root",
         height: 400,
         rows: [
+            {
+                view: 'button',
+                label: 'Cars',
+                click: function () {
+                    webix.ui(cars, $$("root"))
+                }
+
+            },
             {template: "Row 1"},
             {template: "Row 2"},
             {
